@@ -19,8 +19,8 @@ typedef struct{
     sem_t sem;
 }sync_sem_t;
 
-void sync_sem_init(*sync_sem_t semaforo, int valor);
-void sync_sem_wait(*sync_sem_t semaforo);
-void sync_sem_post(*sync_sem_t semaforo);
-void sync_sem_destroy(*sync_sem_t semaforo);
+void sync_sem_init(sync_sem_t *semaforo, int valor);
+void sync_sem_wait(sync_sem_t *semaforo);
+void sync_sem_post(sync_sem_t *semaforo);
+void sync_sem_destroy(sync_sem_t *semaforo);
 #endif

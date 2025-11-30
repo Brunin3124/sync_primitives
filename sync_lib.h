@@ -23,4 +23,18 @@ void sync_sem_init(sync_sem_t *semaforo, int valor);
 void sync_sem_wait(sync_sem_t *semaforo);
 void sync_sem_post(sync_sem_t *semaforo);
 void sync_sem_destroy(sync_sem_t *semaforo);
+
+//struct cond_var
+typedef struct{
+    pthread_cond_t cond;
+} sync_cond_t;
+
+//funcoes
+void sync_cond_init(sync_cond_t *cond);
+void sync_cond_wait(sync_cond_t *cond, sync_mutex_t *mutex);
+void sync_cond_signal(sync_cont_t *cond);
+void sync_cond_broadcast(sync_cond_t *cond);
+void sync_cond_destroy(sync_cond_t *cond);
+
+
 #endif

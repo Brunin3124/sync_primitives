@@ -6,6 +6,6 @@
 
 int main(void) {
    
-
+    printf("halo");
     return 0;
 }

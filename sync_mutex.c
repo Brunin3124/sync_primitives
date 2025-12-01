@@ -11,5 +11,5 @@ void mutex_unlock(sync_mutex_t *mutex){
     pthread_mutex_unlock(&mutex->trava);
 }
 void mutex_destroy(sync_mutex_t *mutex){
-    pthread_mutex_destroy(&mutex->trava)
+    pthread_mutex_destroy(&mutex->trava);
 }

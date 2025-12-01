@@ -2,6 +2,8 @@
 #define SYNC_LIB_H
 
 #include <pthread.h>
+#include <unistd.h>
+#include <semaphore.h>
 
 
 //struct do mutex
@@ -14,10 +16,10 @@ void sync_mutex_lock(sync_mutex_t *mutex);
 void sync_mutex_unlock(sync_mutex_t *mutex);
 void sync_mutex_destroy(sync_mutex_t *mutex);
 
-//struct do semaforo
-typedef struct{
+// struct do semaforo
+typedef struct {
     sem_t sem;
-}sync_sem_t;
+} sync_sem_t;
 
 void sync_sem_init(sync_sem_t *semaforo, int valor);
 void sync_sem_wait(sync_sem_t *semaforo);
@@ -32,7 +34,7 @@ typedef struct{
 //funcoes
 void sync_cond_init(sync_cond_t *cond);
 void sync_cond_wait(sync_cond_t *cond, sync_mutex_t *mutex);
-void sync_cond_signal(sync_cont_t *cond);
+void sync_cond_signal(sync_cond_t *cond);
 void sync_cond_broadcast(sync_cond_t *cond);
 void sync_cond_destroy(sync_cond_t *cond);
 

@@ -10,8 +10,8 @@ void sync_cond_wait(sync_cond_t *cond, sync_mutex_t *mutex){
     pthread_cond_wait(&cond->cond, &mutex->trava);
 }
 
-void sync_cond_signal(sync_cont_t *cond){
-    pthread_cond_wait(&cond->cond);
+void sync_cond_signal(sync_cond_t *cond){
+    pthread_cond_signal(&cond->cond);
 }
 
 void sync_cond_broadcast(sync_cond_t *cond){

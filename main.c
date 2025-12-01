@@ -2,12 +2,10 @@
 #include <time.h>
 #include "sync_lib.h"
 
-/* Protótipos exportados por perfomance_test.c */
+
 void contagem_serial(void);
 void rodar_teste_paralelo(void);
 
-/* Variáveis globais definidas em perfomance_test.c (declaradas externamente
-   para que possamos verificar resultados nos testes). */
 extern long cont_primo_serial;
 extern long cont_primo_paralelo;
 

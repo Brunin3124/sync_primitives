@@ -38,5 +38,27 @@ void sync_cond_signal(sync_cond_t *cond);
 void sync_cond_broadcast(sync_cond_t *cond);
 void sync_cond_destroy(sync_cond_t *cond);
 
+//struct do banqueiro
+typedef struct {
+    int *available;      
+    int **max;          
+    int **allocation;    
+    int **need;         
+    
+    int resources;   
+    int threads;     
+    
+    
+    sync_mutex_t lock;   
+    sync_cond_t cond;   
+} sync_banker_t;
+
+//funça do banqueiro
+void sync_banker_init(sync_banker_t *b, int threads, int resources, int *resources_initiais);
+int sync_banker_add_thread(sync_banker_t *b, int thread_id, int *maximo);
+void sync_banker_request(sync_banker_t *b, int thread_id, int *request);
+void sync_banker_release(sync_banker_t *b, int thread_id, int *release);
+void sync_banker_destroy(sync_banker_t *b);
+
 
 #endif
